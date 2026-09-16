@@ -5,6 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://healthgardenadvocacy.com',
+  build: {
+    format: 'file',
+  },
   vite: {
     plugins: [tailwindcss()]
   }

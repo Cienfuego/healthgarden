@@ -1,0 +1,22 @@
+---
+const { current } = Astro.props;
+
+const links = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/services', label: 'Services', key: 'services' },
+  { href: '/about', label: 'About', key: 'about' },
+  { href: '/contact', label: 'Contact', key: 'contact' },
+];
+---
+
+<nav class="flex items-center justify-between border-b border-border-soft px-5 py-4 md:px-10">
+  <a href="/" class="font-serif text-xl tracking-wide text-teal-deep">Healthgarden</a>
+  <div class="flex gap-4 text-xs uppercase tracking-eyebrow md:gap-6">
+    {links.map(link => (
+      <a
+        href={link.href}
+        class={current === link.key ? 'text-teal-deep' : 'text-slate-body hover:text-teal-deep'}
+      >{link.label}</a>
+    ))}
+  </div>
+</nav>

@@ -1,12 +1,21 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
   description?: string;
+  current?: string;
+  footerMeta?: string;
 }
 
-const { title, description = "Independent nurse practitioner advocacy for complex care decisions, serious diagnoses, and the questions no one has time to answer." } = Astro.props;
+const {
+  title,
+  description = "Independent nurse practitioner advocacy for complex care decisions, serious diagnoses, and the questions no one has time to answer.",
+  current,
+  footerMeta,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,8 +27,11 @@ const { title, description = "Independent nurse practitioner advocacy for comple
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
   </head>
-  <body>
+  <body class="min-h-screen">
+    <Nav current={current} />
     <slot />
+    <Footer meta={footerMeta} />
   </body>
 </html>
