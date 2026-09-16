@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+
+@theme {
+  --color-teal-deep: #0F6E7C;
+  --color-teal-mid: #2D9CAA;
+  --color-teal-light: #D5E8F0;
+  --color-sage: #7A9B76;
+  --color-bronze: #8B6914;
+  --color-warm-white: #FAFAF7;
+  --color-slate-body: #475569;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-warm-white);
+  color: var(--color-slate-body);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+}
