@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const packages = [
+  {
+    name: 'Single Appointment Consultation',
+    price: '$650 in-person · $500 virtual',
+    for: 'For a high-stakes single appointment where clinical understanding will change the outcome.',
+    featured: false,
+    includes: [
+      '60-min clinical pre-appointment consult',
+      'Full records review (up to 50 pages)',
+      'Custom appointment brief with questions',
+      'Attendance at one appointment (90 min)',
+      'Post-appointment debrief',
+    ],
+  },
+  {
+    name: 'Diagnosis Navigation',
+    price: '$3,200 · 6-week engagement',
+    for: 'For a new serious diagnosis that needs a coherent plan across multiple specialists.',
+    featured: true,
+    includes: [
+      'Full clinical timeline construction',
+      'Coordination of up to 3 specialists',
+      'Second opinion facilitation',
+      'Weekly secure-message check-ins',
+      'Final integrated care plan',
+    ],
+  },
+  {
+    name: 'Complex Illness Navigator',
+    price: '$1,800/month · 3-month minimum',
+    for: "For active serious illness, or an adult child managing a parent's complex care.",
+    featured: false,
+    includes: [
+      'Up to 12 hours of advocacy per month',
+      'Ongoing care coordination',
+      'Caregiver clinical support',
+      '24-hour secure message response',
+    ],
+  },
+];
+---
+
+<Layout title="Services — Healthgarden" current="services">
+  <section class="px-6 py-12 text-center md:py-16">
+    <p class="text-xs uppercase tracking-wide-label text-sage">What we offer</p>
+    <h1 class="mt-4 font-serif text-3xl italic leading-tight text-teal-deep md:text-4xl">
+      Ways to work<br />together
+    </h1>
+    <p class="mx-auto mt-5 max-w-md text-sm text-slate-body md:text-base">
+      Three packages built around where you are in your care journey.
+    </p>
+  </section>
+
+  <section class="px-6 pb-12">
+    <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
+      {packages.map(pkg => (
+        <div class={pkg.featured ? 'rounded border-2 border-sage bg-white p-6' : 'rounded border border-border-soft bg-white p-6'}>
+          {pkg.featured && <p class="mb-2 text-xs uppercase tracking-eyebrow text-sage">Most requested</p>}
+          <h2 class="font-serif text-xl text-teal-deep">{pkg.name}</h2>
+          <p class="mt-2 text-sm text-bronze">{pkg.price}</p>
+          <p class="mt-3 text-sm italic text-slate-body">{pkg.for}</p>
+          <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-body">
+            {pkg.includes.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+<section class="px-6 pb-16">
+    <div class="mx-auto max-w-2xl border-l-2 border-bronze bg-white px-6 py-5">
+      <h2 class="text-xs uppercase tracking-eyebrow text-bronze">What Healthgarden is not</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-body">
+        Healthgarden does not prescribe medications, order tests, provide primary or emergency care, or bill health insurance. My role is clinical advocacy alongside your existing providers — not a replacement for them.
+      </p>
+    </div>
+  </section>
+</Layout>
