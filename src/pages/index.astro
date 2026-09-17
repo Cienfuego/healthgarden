@@ -8,6 +8,11 @@ const personas = [
   { title: 'Adult children', body: "Navigating a parent's care from close by or across the country." },
   { title: 'Second opinions', body: 'You want a clinical read before your next appointment.' },
 ];
+const steps = [
+  { num: 'i.', title: 'Consultation', body: "A 30-minute call to understand what you're facing." },
+  { num: 'ii.', title: 'Review', body: 'Chart, imaging, and history read with clinical eyes.' },
+  { num: 'iii.', title: 'Advocacy', body: 'Attending appointments, translating, coordinating.' },
+];
 ---
 <Layout
   title="Healthgarden — Cultivating thoughtful care"
@@ -34,5 +39,25 @@ const personas = [
         </div>
       ))}
     </div>
+  </section>
+<section class="border-t border-border-soft px-6 py-12">
+    <h2 class="text-center font-serif text-2xl text-teal-deep">How it works</h2>
+    <div class="mx-auto mt-8 flex max-w-xl flex-col gap-6">
+      {steps.map(s => (
+        <div class="flex gap-4">
+          <span class="min-w-8 font-serif text-2xl italic leading-none text-bronze">{s.num}</span>
+          <div>
+            <h3 class="text-xs uppercase tracking-eyebrow text-teal-deep">{s.title}</h3>
+            <p class="mt-1 text-sm text-slate-body">{s.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+<section class="border-t border-border-soft px-6 py-12 text-center">
+    <blockquote class="mx-auto max-w-lg font-serif text-xl italic leading-snug text-teal-deep md:text-2xl">
+      "She translated a wall of medical jargon into a plan our family could actually follow."
+    </blockquote>
+    <p class="mt-4 text-xs uppercase tracking-eyebrow text-sage">Client, Reston VA</p>
   </section>
 </Layout>
