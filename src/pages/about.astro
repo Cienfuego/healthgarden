@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: 'Anti-suffering.',
+    body: 'The core question is always whether this reduces suffering and improves quality of life. If the answer is unclear, we slow down.',
+  },
+  {
+    title: 'Clinical honesty.',
+    body: 'You get my actual clinical read, not the reassurance version. Warm, direct, and grounded in what the records actually say.',
+  },
+  {
+    title: 'Alongside, not instead.',
+    body: 'Your primary care and specialists stay central. I work in the gaps — pre-appointment prep, translation, coordination, follow-through.',
+  },
+];
+---
+
+<Layout title="About — Healthgarden" current="about">
+  <section class="px-6 py-12 text-center md:py-16">
+    <p class="text-xs uppercase tracking-wide-label text-sage">About</p>
+    <h1 class="mt-4 font-serif text-3xl italic leading-tight text-teal-deep md:text-4xl">
+      Fifteen years<br />of listening
+    </h1>
+  </section>
+
+  <section class="px-6 pb-12">
+    <div class="mx-auto flex max-w-3xl flex-col gap-6 sm:flex-row sm:items-start">
+      <div class="h-40 w-32 shrink-0 rounded-sm bg-linear-to-br from-teal-light to-sage"></div>
+      <div>
+        <h2 class="font-serif text-2xl text-teal-deep">Alison Tompkins</h2>
+        <p class="mt-1 text-xs uppercase tracking-eyebrow text-bronze">AGNP-C · MSN · Virginia NP</p>
+        <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+          Fifteen years across oncology, palliative care, hospice, and corporate wellness taught me that the hardest part of care isn't the medicine — it's the space between appointments, where families sit alone with hard information. Healthgarden is that space, filled.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-6 pb-12">
+    <div class="mx-auto max-w-2xl">
+      {values.map(v => (
+        <div class="border-t border-border-soft py-5">
+          <h3 class="font-serif text-lg italic text-teal-deep">{v.title}</h3>
+          <p class="mt-2 text-sm text-slate-body">{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-t border-border-soft px-6 py-12 text-center">
+    <blockquote class="mx-auto max-w-lg font-serif text-xl italic leading-snug text-teal-deep">
+      "The system runs on 15-minute appointments. Healthgarden runs on the time those appointments don't have."
+    </blockquote>
+  </section>
+</Layout>
