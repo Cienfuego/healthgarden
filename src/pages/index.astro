@@ -1,13 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
----
 
+const ctaClass = "mt-7 inline-block rounded-sm bg-teal-deep px-6 py-3 text-xs uppercase tracking-eyebrow text-warm-white";
+const personas = [
+  { title: 'Newly diagnosed', body: 'Serious diagnosis, a wall of information, and hard decisions in front of you.' },
+  { title: 'Complex care', body: 'Multiple specialists, no one connecting the pieces.' },  
+  { title: 'Adult children', body: "Navigating a parent's care from close by or across the country." },
+  { title: 'Second opinions', body: 'You want a clinical read before your next appointment.' },
+];
+---
 <Layout
   title="Healthgarden — Cultivating thoughtful care"
   current="home"
   footerMeta="Northern Virginia · Virtual nationwide"
 >
-  <main class="p-10">
-    <p class="font-serif italic text-4xl text-teal-deep">Cultivating thoughtful care.</p>
-  </main>
+  <section class="px-6 py-14 text-center md:py-20">
+    <p class="text-xs uppercase tracking-wide-label text-sage">Clinical Patient Advocacy</p>
+    <h1 class="mt-4 font-serif text-4xl italic leading-tight text-teal-deep md:text-5xl">
+      Cultivating<br />thoughtful care.
+    </h1>
+    <p class="mx-auto mt-5 max-w-md text-sm text-slate-body md:text-base">
+      Independent nurse practitioner advocacy for complex care decisions, serious diagnoses, and the questions no one has time to answer.
+    </p>
+    <a href="/contact" class={ctaClass}>Start a conversation</a>
+  </section>
+<section class="border-t border-border-soft px-6 py-12">
+    <h2 class="text-center font-serif text-2xl text-teal-deep">Who Healthgarden is for</h2>
+    <div class="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
+      {personas.map(p => (
+        <div class="rounded border border-border-soft bg-white p-5">
+          <h3 class="font-serif text-lg text-teal-deep">{p.title}</h3>
+          <p class="mt-2 text-sm text-slate-body">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </Layout>
