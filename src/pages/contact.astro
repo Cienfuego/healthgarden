@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const fieldClass = "w-full rounded-sm border border-teal-light bg-white px-3 py-2 text-sm text-slate-body";
+const labelClass = "block text-xs uppercase tracking-eyebrow text-sage";
+
+const inquiryOptions = [
+  'Newly diagnosed',
+  'Complex or ongoing care',
+  'Caring for a parent',
+  'Second opinion',
+  'Referral partner',
+  'Something else',
+];
+---
+
+<Layout
+  title="Contact — Healthgarden"
+  current="contact"
+  footerMeta="alison@healthgardenadvocacy.com"
+>
+  <section class="px-6 py-12 text-center md:py-16">
+    <p class="text-xs uppercase tracking-wide-label text-sage">Reach out</p>
+    <h1 class="mt-4 font-serif text-3xl italic leading-tight text-teal-deep md:text-4xl">
+      Let's talk about<br />what you're facing
+    </h1>
+  </section>
+
+  <section class="px-6 pb-16">
+    <div class="mx-auto max-w-lg">
+      <p class="text-center text-sm text-slate-body">
+        Most people find Healthgarden during a hard week. This is the start of a conversation — I'll respond within one business day.
+      </p>
+
+      <form method="POST" action="#" class="mt-8 space-y-4">
+        <div>
+          <label class={labelClass} for="name">Your name</label>
+          <input class={fieldClass} type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label class={labelClass} for="email">Email</label>
+          <input class={fieldClass} type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label class={labelClass} for="phone">Phone</label>
+          <input class={fieldClass} type="tel" id="phone" name="phone" />
+        </div>
+        <div>
+          <label class={labelClass} for="inquiry">Nature of inquiry</label>
+          <select class={fieldClass} id="inquiry" name="inquiry" required>
+            <option value="">Select one</option>
+            {inquiryOptions.map(opt => <option value={opt}>{opt}</option>)}
+          </select>
+        </div>
+        <div>
+          <label class={labelClass} for="message">Anything you'd like me to know</label>
+          <textarea class={fieldClass} id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <div class="hidden" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="border-l-2 border-bronze bg-white px-4 py-3">
+          <p class="text-sm italic text-slate-body">
+            Please do not share medical details in this form. Anything clinical happens through a scheduled consultation or my secure client portal.
+          </p>
+        </div>
+
+        <button type="submit" class="w-full rounded-sm bg-teal-deep py-3 text-xs uppercase tracking-eyebrow text-warm-white">Send message</button>
+      </form>
+    </div>
+  </section>
+</Layout>
