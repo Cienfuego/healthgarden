@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import { Image } from 'astro:assets';
+import headshot from '../assets/headshot.jpeg';
 const values = [
   {
     title: 'Anti-suffering.',
@@ -27,7 +28,7 @@ const values = [
 
   <section class="px-6 pb-12">
     <div class="mx-auto flex max-w-3xl flex-col gap-6 sm:flex-row sm:items-start">
-      <div class="h-40 w-32 shrink-0 rounded-sm bg-linear-to-br from-teal-light to-sage"></div>
+	          <Image src={headshot} alt="Alison Tompkins" width={320} height={400} class="h-40 w-32 shrink-0 rounded-sm object-cover" />
       <div>
         <h2 class="font-serif text-2xl text-teal-deep">Alison Tompkins</h2>
         <p class="mt-1 text-xs uppercase tracking-eyebrow text-bronze">AGNP-C · MSN · Virginia NP</p>
