@@ -2,7 +2,7 @@ import { SESv2Client, SendEmailCommand } from "@aws-sdk/client-sesv2";
 
 const ses = new SESv2Client({ region: "us-east-1" });
 
-const TO = "alison@healthgardenadvocacy.com";
+const TO = ["alison@healthgardenadvocacy.com", "mtompkins82@gmail.com"];
 const FROM = "Healthgarden Website <noreply@healthgardenadvocacy.com>";
 const ALLOWED_ORIGIN = "https://healthgardenadvocacy.com";
 
@@ -66,7 +66,7 @@ export const handler = async (event) => {
   try {
     await ses.send(new SendEmailCommand({
       FromEmailAddress: FROM,
-      Destination: { ToAddresses: [TO] },
+      Destination: { ToAddresses: Array.isArray(TO) ? TO : [TO] },
       ReplyToAddresses: [email],
       Content: {
         Simple: {

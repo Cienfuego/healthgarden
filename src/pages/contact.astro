@@ -94,8 +94,9 @@ const inquiryOptions = [
       const body = await res.json();
 
       if (res.ok && body.ok) {
-        form.innerHTML = '<p class="py-8 text-center text-sm text-slate-body">Thank you — your message has been sent. I\'ll respond within one business day.</p>';
-      } else {
+        form.innerHTML = '<div class="border-l-2 border-bronze bg-white px-6 py-8 text-center"><p class="font-serif text-2xl italic text-teal-deep">Thank you.</p><p class="mt-3 text-sm text-slate-body">Your message has been sent. I\'ll respond within one business day.</p></div>';  
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else {
         status.textContent = body.error || 'Something went wrong. Please try again.';
         button.disabled = false;
         button.textContent = 'Send message';
