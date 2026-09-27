@@ -32,7 +32,7 @@ const values = [
 
   <section class="border-t border-border-soft px-6 py-12">
     <div class="mx-auto max-w-2xl">
-      <h2 class="font-serif text-2xl italic text-teal-deep">Alison the clinician</h2>
+      <h2 class="text-center text-sm uppercase tracking-eyebrow text-sage">Alison the clinician</h2>
       <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
         Fifteen years across oncology, palliative care, hospice, and corporate wellness taught me that the hardest part of care isn't the medicine — it's the space between appointments, where families sit alone with hard information. Healthgarden is that space, filled.
       </p>
@@ -44,17 +44,17 @@ const values = [
 
   <section class="border-t border-border-soft px-6 py-12">
     <div class="mx-auto max-w-2xl">
-      <h2 class="font-serif text-2xl italic text-teal-deep">A few things about me</h2>
+      <h2 class="text-center font-serif text-3xl italic text-teal-deep">A few things about me</h2>
       <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
         I know one of the challenges in healthcare is finding a provider you trust. That's essential to the collaborative relationship, and I want anyone I work with to feel comfortable discussing vulnerable topics. So — here are a few things:
       </p>
 
       <p class="mt-6 text-sm leading-relaxed text-slate-body md:text-base">
-        <span class="font-medium text-teal-deep">The name Healthgarden</span> came to me while listening to Soundgarden. A spark from two of my passions — healthcare and music.
+        <span class="font-serif text-lg font-medium text-teal-deep">The name Healthgarden</span> came to me while listening to Soundgarden. A spark from two of my passions — healthcare and music.
       </p>
 
       <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
-        <span class="font-medium text-teal-deep">On that note</span> — I love basically all genres of music. Sincerely.
+        <span class="font-serif text-lg font-medium text-teal-deep">On that note</span> — I love basically all genres of music. Sincerely.
       </p>
 
       <figure class="mt-8">
@@ -65,36 +65,38 @@ const values = [
       </figure>
 
       <p class="mt-8 text-sm leading-relaxed text-slate-body md:text-base">
-        <span class="font-medium text-teal-deep">I have two sons</span> who want to spend all our free time riding the Metro. They are absolutely enthused with public transit.
+        <span class="font-serif text-lg font-medium text-teal-deep">I have two sons</span> who want to spend all our free time riding the Metro. They are absolutely enthused with public transit.
       </p>
 
       <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
-        <span class="font-medium text-teal-deep">Before I became a nurse</span>, I worked at an animal hospital. Through that experience, I realized my heart couldn't handle seeing animals suffer — and that my strength was caring for people. I helped care for my grandfather while going through nursing school.
+        <span class="font-serif text-lg font-medium text-teal-deep">Before I became a nurse</span>, I worked at an animal hospital. Through that experience, I realized my heart couldn't handle seeing animals suffer — and that my strength was caring for people. I helped care for my grandfather while going through nursing school.
       </p>
 
       <figure class="mt-8">
         <Image src={bingoCharlie} alt="A cat and a dog resting together on a blanket" widths={[480, 700]} sizes="(min-width: 768px) 42rem, 100vw" class="w-full rounded-sm" />
         <figcaption class="mt-3 text-sm leading-relaxed text-slate-body md:text-base">
-          Bingo and Charlie. And yes, they do, in fact, get along. They are the best and we adore them.
-        </figcaption>
+	          <span class="block text-center font-serif text-base italic text-teal-deep">Bingo &amp; Charlie</span>
+          <span class="mt-2 block text-center text-sm text-slate-body md:text-base">And yes, they do, in fact, get along. They are the best and we adore them.</span>
+	</figcaption>
       </figure>
-
-      <p class="mt-10 border-l-2 border-sage pl-5 text-sm italic leading-relaxed text-slate-body md:text-base">
+      <p class="mt-10 text-center font-serif text-base italic leading-relaxed text-slate-body md:text-lg">
         I firmly believe in being honest and transparent. It would be a privilege to help you reach your healthcare goals. My mission is to treat everyone with respect, dignity, and compassion.
       </p>
-      <p class="mt-3 pl-5 text-xs uppercase tracking-eyebrow text-sage">— Alison</p>
+      <p class="mt-4 text-center font-serif text-base italic text-slate-body">— Alison</p>
     </div>
   </section>
 
   <section class="border-t border-border-soft px-6 py-12">
     <div class="mx-auto max-w-2xl">
-      <h2 class="font-serif text-2xl italic text-teal-deep">How I work</h2>
+      <h2 class="text-center text-sm uppercase tracking-eyebrow text-sage">How I work</h2>
+      <div class="mt-4">
       {values.map(v => (
-        <div class="border-t border-border-soft py-5 first:mt-4">
+        <div class="border-t border-border-soft py-5 first:mt-4 first:border-t-0">
           <h3 class="font-serif text-lg italic text-teal-deep">{v.title}</h3>
           <p class="mt-2 text-sm text-slate-body">{v.body}</p>
         </div>
-      ))}
+	))}
+      </div>
     </div>
   </section>
 </Layout>

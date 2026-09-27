@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const fieldClass = "w-full rounded-sm border border-teal-light bg-white px-3 py-2 text-sm text-slate-body";
+const fieldClass = "w-full rounded-sm border border-teal-light bg-white px-3 py-2 text-sm text-slate-body invalid:text-gray-400";
 const labelClass = "block text-xs uppercase tracking-eyebrow text-sage";
 
 const inquiryOptions = [
@@ -31,7 +31,7 @@ const inquiryOptions = [
       <p class="text-center text-sm text-slate-body">
         Most people find Healthgarden during a hard week. This is the start of a conversation — I'll respond within one business day.
       </p>
-      <p class="mt-3 text-center text-sm italic text-slate-body">
+      <p class="mt-3 text-center font-serif text-base italic text-sage">
         Don't overthink what to write. A sentence or two is enough.
       </p>
       <form method="POST" action="#" class="mt-8 space-y-4">

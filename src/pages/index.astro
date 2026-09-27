@@ -58,21 +58,18 @@ const steps = [
       ))}
     </div>
   </section>
-
   <section class="border-t border-border-soft px-6 py-12">
-    <div class="mx-auto w-fit">
-      <h2 class="font-serif text-2xl text-teal-deep">How it works</h2>
-      <div class="mt-8 flex flex-col gap-6">
-        {steps.map(s => (
-          <div class="flex gap-4">
-            <span class="min-w-8 font-serif text-2xl italic leading-none text-bronze">{s.num}</span>
-            <div>
-              <h3 class="text-xs uppercase tracking-eyebrow text-teal-deep">{s.title}</h3>
-              <p class="mt-1 text-sm text-slate-body">{s.body}</p>
-            </div>
+    <h2 class="text-center font-serif text-2xl text-teal-deep">How it works</h2>
+    <div class="mx-auto mt-8 flex w-fit flex-col gap-6">
+      {steps.map(s => (
+        <div class="flex gap-4">
+          <span class="min-w-8 font-serif text-2xl italic leading-none text-bronze">{s.num}</span>
+          <div>
+            <h3 class="text-xs uppercase tracking-eyebrow text-teal-deep">{s.title}</h3>
+            <p class="mt-1 text-sm text-slate-body">{s.body}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   </section>
   <section class="border-t border-border-soft px-6 py-12 text-center">
