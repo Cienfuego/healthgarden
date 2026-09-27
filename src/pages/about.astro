@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import headshot from '../assets/headshot.jpeg';
+import sparklePony from '../assets/sparkle-pony.jpg';
+import bingoCharlie from '../assets/bingo-charlie.jpg';
+
 const values = [
   {
     title: 'Anti-suffering.',
@@ -19,40 +22,79 @@ const values = [
 ---
 
 <Layout title="About — Healthgarden" current="about">
-  <section class="px-6 py-12 text-center md:py-16">
-    <p class="text-xs uppercase tracking-wide-label text-sage">About</p>
-    <h1 class="mt-4 font-serif text-3xl italic leading-tight text-teal-deep md:text-4xl">
-      Fifteen years<br />of listening
-    </h1>
-  </section>
-
-  <section class="px-6 pb-12">
-    <div class="mx-auto flex max-w-3xl flex-col gap-6 sm:flex-row sm:items-start">
-	          <Image src={headshot} alt="Alison Tompkins" width={320} height={400} class="h-40 w-32 shrink-0 rounded-sm object-cover" />
-      <div>
-        <h2 class="font-serif text-2xl text-teal-deep">Alison Tompkins</h2>
-        <p class="mt-1 text-xs uppercase tracking-eyebrow text-bronze">AGNP-C · MSN · Virginia NP</p>
-        <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
-          Fifteen years across oncology, palliative care, hospice, and corporate wellness taught me that the hardest part of care isn't the medicine — it's the space between appointments, where families sit alone with hard information. Healthgarden is that space, filled.
-        </p>
-      </div>
+  <section class="px-6 pt-8 pb-10 md:pt-12">
+    <div class="mx-auto max-w-64">
+      <Image src={headshot} alt="Alison Tompkins" widths={[480, 768, 1024]} sizes="(min-width: 768px) 42rem, 100vw" class="w-full rounded-sm" />
+      <h1 class="mt-6 text-center font-serif text-3xl text-teal-deep md:text-4xl">Alison Tompkins</h1>
+      <p class="mt-2 text-center text-xs uppercase tracking-eyebrow text-bronze">AGNP-C · MSN · Virginia NP</p>
     </div>
   </section>
 
-  <section class="px-6 pb-12">
+  <section class="border-t border-border-soft px-6 py-12">
     <div class="mx-auto max-w-2xl">
+      <h2 class="font-serif text-2xl italic text-teal-deep">Alison the clinician</h2>
+      <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+        Fifteen years across oncology, palliative care, hospice, and corporate wellness taught me that the hardest part of care isn't the medicine — it's the space between appointments, where families sit alone with hard information. Healthgarden is that space, filled.
+      </p>
+      <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+        I've spent most of my clinical career walking alongside people facing serious diagnoses. Before Healthgarden, I built a corporate wellness clinic at Bloomberg Industry Group under Inova. I saw firsthand how much better outcomes are when someone has clinical support translating what's happening — and I wanted to offer that outside the fifteen-minute appointment window, for the people who need it most.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-t border-border-soft px-6 py-12">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="font-serif text-2xl italic text-teal-deep">A few things about me</h2>
+      <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+        I know one of the challenges in healthcare is finding a provider you trust. That's essential to the collaborative relationship, and I want anyone I work with to feel comfortable discussing vulnerable topics. So — here are a few things:
+      </p>
+
+      <p class="mt-6 text-sm leading-relaxed text-slate-body md:text-base">
+        <span class="font-medium text-teal-deep">The name Healthgarden</span> came to me while listening to Soundgarden. A spark from two of my passions — healthcare and music.
+      </p>
+
+      <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+        <span class="font-medium text-teal-deep">On that note</span> — I love basically all genres of music. Sincerely.
+      </p>
+
+      <figure class="mt-8">
+        <Image src={sparklePony} alt="A purple and pink bicycle decorated with custom details" widths={[480, 700]} sizes="(min-width: 768px) 42rem, 100vw" class="w-full rounded-sm" />
+        <figcaption class="mt-3 text-sm leading-relaxed text-slate-body md:text-base">
+          I love riding my bike, which I decked out in purple, pink, and gold. My husband named her Sparkle Pony.
+        </figcaption>
+      </figure>
+
+      <p class="mt-8 text-sm leading-relaxed text-slate-body md:text-base">
+        <span class="font-medium text-teal-deep">I have two sons</span> who want to spend all our free time riding the Metro. They are absolutely enthused with public transit.
+      </p>
+
+      <p class="mt-4 text-sm leading-relaxed text-slate-body md:text-base">
+        <span class="font-medium text-teal-deep">Before I became a nurse</span>, I worked at an animal hospital. Through that experience, I realized my heart couldn't handle seeing animals suffer — and that my strength was caring for people. I helped care for my grandfather while going through nursing school.
+      </p>
+
+      <figure class="mt-8">
+        <Image src={bingoCharlie} alt="A cat and a dog resting together on a blanket" widths={[480, 700]} sizes="(min-width: 768px) 42rem, 100vw" class="w-full rounded-sm" />
+        <figcaption class="mt-3 text-sm leading-relaxed text-slate-body md:text-base">
+          Bingo and Charlie. And yes, they do, in fact, get along. They are the best and we adore them.
+        </figcaption>
+      </figure>
+
+      <p class="mt-10 border-l-2 border-sage pl-5 text-sm italic leading-relaxed text-slate-body md:text-base">
+        I firmly believe in being honest and transparent. It would be a privilege to help you reach your healthcare goals. My mission is to treat everyone with respect, dignity, and compassion.
+      </p>
+      <p class="mt-3 pl-5 text-xs uppercase tracking-eyebrow text-sage">— Alison</p>
+    </div>
+  </section>
+
+  <section class="border-t border-border-soft px-6 py-12">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="font-serif text-2xl italic text-teal-deep">How I work</h2>
       {values.map(v => (
-        <div class="border-t border-border-soft py-5">
+        <div class="border-t border-border-soft py-5 first:mt-4">
           <h3 class="font-serif text-lg italic text-teal-deep">{v.title}</h3>
           <p class="mt-2 text-sm text-slate-body">{v.body}</p>
         </div>
       ))}
     </div>
-  </section>
-
-  <section class="border-t border-border-soft px-6 py-12 text-center">
-    <blockquote class="mx-auto max-w-lg font-serif text-xl italic leading-snug text-teal-deep">
-      "The system runs on 15-minute appointments. Healthgarden runs on the time those appointments don't have."
-    </blockquote>
   </section>
 </Layout>
