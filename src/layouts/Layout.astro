@@ -35,6 +35,13 @@ const {
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:image" content={new URL('/og-image.jpg', Astro.site)} />
     <meta name="twitter:card" content="summary_large_image" />
+     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-88DVCQLXST"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-88DVCQLXST');
+    </script> 
   </head>
   <body class="min-h-screen">
     <Nav current={current} />
