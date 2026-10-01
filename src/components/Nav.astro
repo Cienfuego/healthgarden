@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
 const { current } = Astro.props;
 
 const links = [
@@ -10,13 +13,13 @@ const links = [
 ---
 
 <nav class="flex items-center justify-between border-b border-border-soft px-5 py-4 md:px-10">
-  <a href="/" class="font-serif text-xl tracking-wide text-teal-deep sm:text-2xl">Healthgarden</a>
+  <a href="/" class="shrink-0"><Image src={logo} alt="Healthgarden — Cultivating thoughtful care" widths={[300, 600]} sizes="(min-width: 768px) 15rem, 11rem" class="h-10 w-auto md:h-12" /></a>
   <div class="flex gap-2.5 text-[11px] uppercase tracking-eyebrow sm:gap-4 sm:text-xs md:gap-6">
-    {links.map(link => (
-      <a
+    {links.map(link => ( 
+    <a 
         href={link.href}
         class={current === link.key ? 'text-teal-deep' : 'text-slate-body hover:text-teal-deep'}
-      >{link.label}</a>
+	>{link.label}</a>
     ))}
   </div>
 </nav>
