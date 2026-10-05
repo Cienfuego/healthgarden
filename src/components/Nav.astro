@@ -14,7 +14,7 @@ const links = [
   <a href="/" class="shrink-0"><Image src={logo} alt="Healthgarden — Cultivating thoughtful care" widths={[300, 600]} sizes="(min-width: 768px) 15rem, 17rem" class="h-12 w-auto" /></a>
   <div class="flex gap-4 text-[11px] uppercase tracking-eyebrow sm:gap-5 sm:text-xs md:gap-6">
     {links.map(link => (
-      
+    <a
         href={link.href}
         class={current === link.key ? 'text-teal-deep' : 'text-slate-body hover:text-teal-deep'}
       >{link.label}</a>
