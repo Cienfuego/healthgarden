@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
-import logoMark from '../assets/logo-mark.png';
 const { current } = Astro.props;
 
 const links = [
@@ -11,15 +10,14 @@ const links = [
   { href: '/contact.html', label: 'Contact', key: 'contact' },
 ];
 ---
-
-<nav class="flex items-center justify-between border-b border-border-soft px-5 py-4 md:px-10">
-	  <a href="/" class="shrink-0"><Image src={logoMark} alt="Healthgarden" widths={[120, 240]} sizes="2.5rem" class="h-10 w-auto sm:hidden" /><Image src={logo} alt="Healthgarden — Cultivating thoughtful care" widths={[300, 600]} sizes="15rem" class="hidden h-12 w-auto sm:block" /></a>
-  <div class="flex gap-2.5 text-[11px] uppercase tracking-eyebrow sm:gap-4 sm:text-xs md:gap-6">
-    {links.map(link => ( 
-    <a 
+<nav class="flex flex-col items-center gap-3 border-b border-border-soft px-5 py-3 md:flex-row md:justify-between md:px-10 md:py-4">
+  <a href="/" class="shrink-0"><Image src={logo} alt="Healthgarden — Cultivating thoughtful care" widths={[300, 600]} sizes="(min-width: 768px) 15rem, 17rem" class="h-12 w-auto" /></a>
+  <div class="flex gap-4 text-[11px] uppercase tracking-eyebrow sm:gap-5 sm:text-xs md:gap-6">
+    {links.map(link => (
+      
         href={link.href}
         class={current === link.key ? 'text-teal-deep' : 'text-slate-body hover:text-teal-deep'}
-	>{link.label}</a>
+      >{link.label}</a>
     ))}
   </div>
 </nav>
