@@ -55,7 +55,7 @@ const packages = [
   </section>
 
   <section class="px-6 pb-12">
-    <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
+    <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-3 xl:max-w-6xl xl:gap-8">
       {packages.map(pkg => (
         <div class={pkg.featured ? 'rounded border-2 border-sage bg-white p-6' : 'rounded border border-border-soft bg-white p-6'}>
           {pkg.featured && <p class="mb-2 text-xs uppercase tracking-eyebrow text-sage">Most requested</p>}
