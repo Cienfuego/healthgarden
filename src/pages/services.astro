@@ -1,6 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const alacarte = [
+  {
+    name: 'Results Review',
+    desc: "Labs, imaging, or pathology explained in plain language. What it means, what's worth asking about, what's routine. 45-min call + written summary.",
+    price: '$150',
+  },
+  {
+    name: 'Post-Appointment Debrief',
+    desc: 'What was said, what it actually means, what got left unanswered, what to do next. 45-min call.',
+    price: '$125',
+  },
+  {
+    name: 'Pre-Appointment Prep',
+    desc: 'A one-page brief: the questions to ask, what to expect, what to bring. 30-min call + document.',
+    price: '$150',
+  },
+  {
+    name: 'Appointment Coordination',
+    desc: 'I make the phone calls, chase the referrals, and get you scheduled — with clinical judgment on which appointment, in what order, and how urgently.',
+    price: '$95',
+    note: 'per appt',
+  },
+  {
+    name: 'Records Gathering',
+    desc: 'Requesting, chasing, and organizing records from multiple providers into one clean timeline.',
+    price: '$250',
+  },
+  {
+    name: 'Medication Review',
+    desc: "Full reconciliation across every prescriber. What's for what, what to ask about, flags for your prescribing provider. 45-min call + written list.",
+    price: '$150',
+  },
+];
+
 const packages = [
   {
     name: 'Single Appointment Consultation',
@@ -43,13 +77,62 @@ const packages = [
 ];
 ---
 
-<Layout title="Services — Healthgarden" current="services" description="Three ways to work with Healthgarden: single appointment consultation, diagnosis navigation, and ongoing complex illness advocacy.">
+<Layout
+  title="Services — Healthgarden"
+  current="services"
+  description="Three packages built around where you are in your care journey, plus one-time à la carte services from $95."
+>
   <section class="px-6 py-12 text-center md:py-16">
     <p class="text-xs uppercase tracking-wide-label text-sage">What we offer</p>
     <h1 class="mt-4 font-serif text-3xl italic leading-tight text-teal-deep md:text-4xl">
-      Ways to work<br />together
+      Start small
     </h1>
-    <p class="mx-auto mt-5 max-w-md text-sm text-slate-body md:text-base">
+  </section>
+
+  <section class="px-6 pb-10">
+    <div class="mx-auto max-w-2xl">
+      <p class="text-center text-sm leading-relaxed text-slate-body md:text-base">
+        Not everyone needs a six-week engagement. Sometimes you need one thing: results explained, a debrief after an appointment that left you with more questions than answers, or someone to make the phone calls you don't have time for.
+      </p>
+      <p class="mt-4 text-center text-sm leading-relaxed text-slate-body md:text-base">
+        <span class="font-medium text-teal-deep">These are one-time, one-price services.</span> No commitment beyond the thing you booked.
+      </p>
+
+      <div class="mt-8">
+        {alacarte.map(item => (
+          <div class="flex items-start justify-between gap-6 border-t border-border-soft py-4 first:border-t-0">
+            <div>
+              <h2 class="font-serif text-lg font-medium text-teal-deep">{item.name}</h2>
+              <p class="mt-1 text-sm leading-relaxed text-slate-body">{item.desc}</p>
+            </div>
+            <div class="shrink-0 pt-1 text-right">
+              <span class="text-base font-medium text-bronze">{item.price}</span>
+              {item.note && <span class="mt-0.5 block text-xs text-sage">{item.note}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-6 flex items-center justify-between gap-6 rounded border-2 border-sage bg-white px-5 py-4">
+        <div>
+          <h2 class="font-serif text-lg font-medium text-teal-deep">Appointment Bookends</h2>
+          <p class="mt-1 text-sm leading-relaxed text-slate-body">Pre-Appointment Prep + Post-Appointment Debrief. The closest thing to having me in the room.</p>
+        </div>
+        <div class="shrink-0 text-right">
+          <span class="text-base font-medium text-bronze">$250</span>
+          <span class="mt-0.5 block text-xs text-sage">save $25</span>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center font-serif text-base italic leading-relaxed text-sage md:text-lg">
+        If you find it useful and want more, anything you've paid in the last 30 days comes off the cost of a package below.
+      </p>
+    </div>
+  </section>
+
+  <section class="border-t border-border-soft px-6 py-12 text-center">
+    <h2 class="font-serif text-2xl text-teal-deep md:text-3xl">When you need more</h2>
+    <p class="mx-auto mt-3 max-w-md text-sm text-slate-body md:text-base">
       Three packages built around where you are in your care journey.
     </p>
   </section>
@@ -59,7 +142,7 @@ const packages = [
       {packages.map(pkg => (
         <div class={pkg.featured ? 'rounded border-2 border-sage bg-white p-6' : 'rounded border border-border-soft bg-white p-6'}>
           {pkg.featured && <p class="mb-2 text-xs uppercase tracking-eyebrow text-sage">Most requested</p>}
-          <h2 class="font-serif text-xl text-teal-deep">{pkg.name}</h2>
+          <h3 class="font-serif text-xl text-teal-deep">{pkg.name}</h3>
           <p class="mt-2 text-sm text-bronze">{pkg.price}</p>
           <p class="mt-3 text-sm italic text-slate-body">{pkg.for}</p>
           <ul class="mt-4 list-disc space-y-1 pl-5 text-sm text-slate-body">
@@ -69,11 +152,13 @@ const packages = [
       ))}
     </div>
   </section>
-    <section class="px-6 pb-12">
+
+  <section class="px-6 pb-12">
     <p class="mx-auto max-w-2xl text-center font-serif text-base italic text-sage">
       If none of these feel quite right, tell me anyway. I'm often willing to build something custom for the right situation.
     </p>
   </section>
+
   <section class="px-6 pb-16">
     <div class="mx-auto max-w-2xl border-l-2 border-bronze bg-white px-6 py-5">
       <h2 class="text-xs uppercase tracking-eyebrow text-bronze">What Healthgarden is not</h2>
