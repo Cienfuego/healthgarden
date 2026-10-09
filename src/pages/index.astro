@@ -16,7 +16,35 @@ const steps = [
   { num: 'i.', title: 'Consultation', body: "A 30-minute call to understand what you're facing." },
   { num: 'ii.', title: 'Review', body: 'Chart, imaging, and history read with clinical eyes.' },
   { num: 'iii.', title: 'Advocacy', body: 'Attending appointments, translating, coordinating.' },
-];
+  ];
+
+  const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Healthgarden",
+  "description": "Independent nurse practitioner patient advocacy for complex care decisions, serious diagnoses, and second opinions.",
+  "url": "https://healthgardenadvocacy.com",
+  "logo": "https://healthgardenadvocacy.com/logo.png",
+  "image": "https://healthgardenadvocacy.com/og-image.jpg",
+  "telephone": "+1-703-596-5828",
+  "email": "alison@healthgardenadvocacy.com",
+  "priceRange": "$95-$3200",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Reston",
+    "addressRegion": "VA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Virginia" },
+    { "@type": "AdministrativeArea", "name": "Northern Virginia" }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Alison Tompkins",
+    "honorificSuffix": "AGNP-C, MSN"
+  }
+};
 ---
 
 <Layout
@@ -78,4 +106,5 @@ const steps = [
     </blockquote>
     <p class="mt-4 text-xs uppercase tracking-eyebrow text-sage">Client, Reston VA</p>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>

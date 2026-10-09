@@ -18,7 +18,22 @@ const values = [
     title: 'Alongside, not instead.',
     body: 'Your primary care and specialists stay central. I work in the gaps — pre-appointment prep, translation, coordination, follow-through.',
   },
-];
+  ];
+
+  const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alison Tompkins",
+  "honorificSuffix": "AGNP-C, MSN",
+  "jobTitle": "Independent Patient Advocate",
+  "description": "Nurse practitioner with fifteen years across oncology, palliative care, hospice, and corporate wellness, now providing independent clinical patient advocacy.",
+  "url": "https://healthgardenadvocacy.com/about.html",
+  "worksFor": {
+    "@type": "ProfessionalService",
+    "name": "Healthgarden",
+    "url": "https://healthgardenadvocacy.com"
+  }
+};
 ---
 
 <Layout title="Alison Tompkins, AGNP-C — Patient Advocate, Reston VA" current="about" description="Alison Tompkins, AGNP-C — fifteen years across oncology, palliative care, hospice, and corporate wellness, now offering independent patient advocacy.">
@@ -100,4 +115,5 @@ const values = [
       </div>
     </div>
   </section>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 </Layout>
